@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class ProductReview {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	
 	private Integer productId;
