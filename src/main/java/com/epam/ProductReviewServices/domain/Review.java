@@ -15,11 +15,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="product_review")
-public class ProductReview {
+public class Review {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Integer reviewId;
 	
 	private Integer productId;
 	
@@ -28,15 +28,15 @@ public class ProductReview {
 	/**
 	 * @return the id
 	 */
-	public Integer getId() {
-		return id;
+	public Integer getReviewId() {
+		return reviewId;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Integer id) {
-		this.id = id;
+	public void setReviewId(Integer id) {
+		this.reviewId = id;
 	}
 
 	/**

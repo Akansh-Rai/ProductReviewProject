@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.epam.ProductReviewServices.dao.ReviewDAO;
-import com.epam.ProductReviewServices.domain.ProductReview;
+import com.epam.ProductReviewServices.domain.Review;
 
 /**
  * @author Akansh_Rai
@@ -24,20 +24,20 @@ public class ProductReviewServiceImpl implements ProductReviewService {
 	private ReviewDAO reviewRepository;
 
 	@Override
-	public Iterable<ProductReview> getReviews() {
+	public Iterable<Review> getReviews() {
 		return reviewRepository.findAll();
 	}
 
 	@Override
-	public List<ProductReview> getProductReview (int productId) {
-		Iterable<ProductReview> iterable = reviewRepository.findAll();
+	public List<Review> getProductReview (int productId) {
+		Iterable<Review> iterable = reviewRepository.findAll();
 		return StreamSupport.stream(iterable.spliterator(), false)
 				.filter(review -> review.getProductId().intValue() == productId).collect(Collectors.toList());
 	}
 
 	@Override
-	public ProductReview addProduct(ProductReview productReview) {
-		int id = reviewRepository.save(productReview).getId();
+	public Review addProduct(Review productReview) {
+		int id = reviewRepository.save(productReview).getReviewId();
 		productReview.setRating(id);
 		return productReview;
 	}
