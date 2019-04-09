@@ -5,7 +5,7 @@ package com.epam.ProductReviewServices.service;
 
 import java.util.List;
 
-import com.epam.ProductReviewServices.domain.ProductReview;
+import com.epam.ProductReviewServices.domain.Review;
 
 /**
  * @author Akansh_Rai
@@ -13,11 +13,11 @@ import com.epam.ProductReviewServices.domain.ProductReview;
  */
 public interface ProductReviewService {
 
-	public Iterable<ProductReview> getReviews();
+	public Iterable<Review> getReviews();
 
-	public List<ProductReview> getProductReview(int productId);
+	public List<Review> getProductReview(int productId);
 
-	public ProductReview addProduct(ProductReview productReview);
+	public Review addProduct(Review productReview);
 
 	//public void removeProduct(int id);
 
