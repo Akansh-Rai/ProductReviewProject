@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @author Akansh_Rai
  *
  */
-@FeignClient(value = "jplaceholder", url = "http://localhost:8081/JavaOnboardingProject")
+@FeignClient(value = "product-service")
 public interface JSONPlaceHolderClient {
 
 }
